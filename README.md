@@ -3,6 +3,6 @@
 # Outils utilisés
 Langage: C#/.NET
 EDI: Visual Studio 2017
-Bibliothèque TUI: [GUI.cs](https://github.com/migueldeicaza/gui.cs)
+Bibliothèque TUI: [GUI.cs](https://github.com/migueldeicaza/gui.cs) [Tutoriel](https://migueldeicaza.github.io/gui.cs/articles/overview.html)
 Utilitaire: [ToggleComment style Eclipse](https://marketplace.visualstudio.com/items?itemName=munyabe.ToggleComment)
 
