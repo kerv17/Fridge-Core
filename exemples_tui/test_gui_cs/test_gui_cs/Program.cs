@@ -2,6 +2,13 @@
 
 class Demo
 {
+
+    static Dialog AfficherBienvenue()
+    {
+        var alerteTest = new Dialog("Bienvenue sur le Fridge!", 40, 10, new Button("OK", true) { Clicked = () => {; } } );
+        return alerteTest;
+    }
+
     static void Main()
     {
         Application.Init();
@@ -18,6 +25,7 @@ class Demo
             Height = Dim.Fill()
         };
         top.Add(win);
+        //top.ColorScheme = new ColorScheme();
 
         // Creates a menubar, the item "New" has a help menu.
         var menu = new MenuBar(new MenuBarItem[] {
@@ -33,8 +41,13 @@ class Demo
                 new MenuItem ("_Copy", "", null),
                 new MenuItem ("C_ut", "", null),
                 new MenuItem ("_Paste", "", null)
-            })
+            }),
         });
+        var boutonLabel = new Button(40,10,"Afficher le message de bienvenue", false)
+        {
+            Clicked = ( () => { Application.Run(AfficherBienvenue()); } )
+        };
+
         top.Add(menu);
 
         var login = new Label("Login: ") { X = 3, Y = 2 };
@@ -60,7 +73,7 @@ class Demo
         // Add some controls, 
         win.Add(
             // The ones with my favorite layout system
-            login, password, loginText, passText,
+            login, password, loginText, passText, boutonLabel,
 
                 // The ones laid out like an australopithecus, with absolute positions:
                 new CheckBox(3, 6, "Remember me"),
