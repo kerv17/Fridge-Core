@@ -14,16 +14,11 @@ class Fridge
 {
     static int Main()
     {
-        //Vue vue = new Vue();
-        //vue.afficher();
+        Vue vue = new Vue();
         BD database = new BD();
-        database.GetUtilisateurs();
-        List<Utilisateur.Utilisateur> liste = database.GetUtilisateurs();
-        Console.WriteLine("Utilisateurs:");
-        for (int i = 0; i< liste.Count; i++)
-        {
-            liste[i].afficher();
-        }
+        vue.afficher();
+        
+        
         
        return 0;
     }
