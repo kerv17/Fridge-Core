@@ -1,0 +1,201 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Font/DOTMATRI.TTF" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="Panel"]
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Panel"]
+margin_left = 307.2
+margin_top = 525.377
+margin_right = 922.2
+margin_bottom = 565.377
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/Control"]
+anchor_right = 0.2
+anchor_bottom = 1.0
+text = "Nouveau"
+
+[node name="Button2" type="Button" parent="Panel/Control"]
+anchor_left = 0.4
+anchor_right = 0.6
+anchor_bottom = 1.0
+text = "Modifier"
+
+[node name="Button3" type="Button" parent="Panel/Control"]
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Supprimer"
+
+[node name="Control2" type="Control" parent="Panel"]
+margin_left = 86.0
+margin_top = 120.0
+margin_right = 234.0
+margin_bottom = 480.0
+
+[node name="Button" type="Button" parent="Panel/Control2"]
+anchor_right = 1.0
+anchor_bottom = 0.15
+text = "Utilisateurs"
+
+[node name="Button2" type="Button" parent="Panel/Control2"]
+anchor_top = 0.425
+anchor_right = 1.0
+anchor_bottom = 0.575
+text = "Items"
+
+[node name="Button3" type="Button" parent="Panel/Control2"]
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Factures"
+
+[node name="Nouvel Utilisateur" type="WindowDialog" parent="."]
+margin_left = 164.52
+margin_top = 122.177
+margin_right = 851.52
+margin_bottom = 513.177
+window_title = "Nouvel Utilisateur"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Nouvel Utilisateur"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.6
+margin_left = 0.299995
+margin_top = -0.100002
+margin_right = 0.700012
+margin_bottom = 70.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="Nouvel Utilisateur/Control"]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.1
+placeholder_text = "Surnom"
+
+[node name="LineEdit2" type="LineEdit" parent="Nouvel Utilisateur/Control"]
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.3
+placeholder_text = "Nom"
+
+[node name="LineEdit3" type="LineEdit" parent="Nouvel Utilisateur/Control"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+placeholder_text = "Email"
+
+[node name="LineEdit4" type="LineEdit" parent="Nouvel Utilisateur/Control"]
+anchor_top = 0.7
+anchor_right = 1.0
+anchor_bottom = 0.7
+margin_bottom = 24.0
+secret = true
+placeholder_text = "Mot de passe"
+
+[node name="Button" type="Button" parent="Nouvel Utilisateur"]
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+text = "Confirmer"
+
+[node name="Nouvel Item" type="WindowDialog" parent="."]
+margin_left = 164.52
+margin_top = 122.177
+margin_right = 851.52
+margin_bottom = 513.177
+window_title = "Nouvel Item"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Nouvel Item"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.6
+margin_left = 0.299995
+margin_top = -0.100002
+margin_right = 0.700012
+margin_bottom = 70.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="Nouvel Item/Control"]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.1
+placeholder_text = "Nom"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit2" type="LineEdit" parent="Nouvel Item/Control"]
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.3
+placeholder_text = "Prix"
+
+[node name="Button" type="Button" parent="Nouvel Item"]
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+text = "Confirmer"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.2
+margin_top = 27.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Panneau d'admin"
+text = "Panneau d'admin"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
