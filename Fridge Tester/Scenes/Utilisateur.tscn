@@ -1,0 +1,189 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Font/TIMESS__.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI cs Code/User/ItemList.cs" type="Script" id=2]
+[ext_resource path="res://UI cs Code/User/Confirmbuy.cs" type="Script" id=3]
+[ext_resource path="res://UI cs Code/User/UtilisateurMenu.cs" type="Script" id=4]
+[ext_resource path="res://UI cs Code/User/HistoriqueList.cs" type="Script" id=5]
+[ext_resource path="res://Font/MonoFont.tres" type="DynamicFont" id=6]
+
+
+
+
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Panel
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	#$RichTextLabel.text = CurrentUser.user.getName()+\"(\"+CurrentUser.user.getDette()+\"$)\"
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+
+func _on_Buy_pressed():
+	
+	if ($TabContainer/Items.is_anything_selected()):
+		get_parent().get_node(\"Confirmbuy\").visible = true;
+		var index = $TabContainer/Items.get_selected_items()[0]
+		get_parent().item = index
+	pass # Replace with function body.
+"
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Disconnect_pressed():
+	get_tree().change_scene(\"res://Scenes/Menu.tscn\")
+	pass # Replace with function body.
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.353
+anchor_bottom = 0.118
+margin_left = -0.400002
+margin_right = 39.528
+margin_bottom = 46.2
+custom_fonts/normal_font = SubResource( 2 )
+text = "Username (5.00$)"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy" type="Button" parent="Panel"]
+anchor_left = 0.3
+anchor_top = 0.85
+anchor_right = 0.4
+anchor_bottom = 0.9
+margin_bottom = 20.0
+text = "Acheter"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Disconnect" type="Button" parent="Panel"]
+anchor_left = 0.6
+anchor_top = 0.85
+anchor_right = 0.7
+anchor_bottom = 0.9
+margin_bottom = 20.0
+text = "Fermer la session"
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Items" type="ItemList" parent="Panel/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 6 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Historique" type="ItemList" parent="Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 6 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirmbuy" type="ConfirmationDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -50.0
+margin_right = 100.0
+margin_bottom = 50.0
+window_title = "Confirmation"
+dialog_text = "Es-tu sur de vouloir acheter ce produit?"
+dialog_autowrap = true
+script = ExtResource( 3 )
+
+[node name="Confirm disconnect" type="ConfirmationDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -50.0
+margin_right = 100.0
+margin_bottom = 50.0
+window_title = "Confirmation"
+dialog_text = "Es-tu sur de vouloir te deconnecter?"
+dialog_autowrap = true
+[connection signal="pressed" from="Panel/Buy" to="Panel/TabContainer/Items" method="_on_Buy_pressed"]
+[connection signal="pressed" from="Panel/Disconnect" to="Panel/Disconnect" method="_on_Disconnect_pressed"]
+[connection signal="confirmed" from="Confirmbuy" to="Confirmbuy" method="_on_Confirm_buy_confirmed"]
