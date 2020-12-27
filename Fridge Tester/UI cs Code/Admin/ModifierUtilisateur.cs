@@ -10,6 +10,7 @@ public class ModifierUtilisateur : WindowDialog
     // private string b = "text";
     CurrentUser current;
     public Utilisateur user;
+    public AdminPanel admin;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -40,12 +41,19 @@ public class ModifierUtilisateur : WindowDialog
         var mdp = (LineEdit)GetNode("Control/mdp");
         var email = (LineEdit)GetNode("Control/email");
 
-        user.setDette(Convert.ToDouble(dette.Text));
-        user.setNom(nom.Text);
-        user.setSurnom(surnom.Text);
-        user.setMotDePasse(mdp.Text);
-        user.setEmail(email.Text);
+        if (dette.Text != "")
+            user.setDette(Convert.ToDouble(dette.Text));
+        if (nom.Text != "")
+            user.setNom(nom.Text);
+        if (surnom.Text != "")
+            user.setSurnom(surnom.Text);
+        if (mdp.Text != "")
+            user.setMotDePasse(mdp.Text);
+        if (email.Text != "")
+            user.setEmail(email.Text);
+
         current.database.OverrideUtilisateur(user);
+        admin.reloadLists();
         onPopup();
     }
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.

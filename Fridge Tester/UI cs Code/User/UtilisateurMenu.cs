@@ -26,10 +26,18 @@ public class UtilisateurMenu : Control
 		int id = current.user.getId();
 		current.database.refresh();
 		current.user = current.database.listeU[id];
+		var title = (RichTextLabel)GetNode("Panel/RichTextLabel");
+		title.Text =  current.user.getSurnom() + " ("+ current.user.getDette().ToString("F") +"$)";
     }
 	public void refreshHistorique()
 	{
 		factures = current.user.getHistorique();
+	}
+	
+	public void refreshItems()
+	{
+		ItemList item = (ItemList)GetNode("Panel/TabContainer/Items");
+		item.refreshItems();
 	}
 
 	//  // Called every frame. 'delta' is the elapsed time since the previous frame.

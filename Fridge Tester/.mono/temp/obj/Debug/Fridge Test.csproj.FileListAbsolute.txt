@@ -32,3 +32,18 @@ D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\TECH\GODOT 3.0\
 D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\TECH\GODOT 3.0\Fridge Tester\.mono\temp\bin\Debug\System.Data.SqlClient.dll
 D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\TECH\GODOT 3.0\Fridge Tester\.mono\temp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\TECH\GODOT 3.0\Fridge Tester\.mono\temp\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\bin\Debug\Fridge Test.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\bin\Debug\Fridge Test.pdb
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\bin\Debug\MySql.Data.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\bin\Debug\MySqlConnector.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\bin\Debug\System.Buffers.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\bin\Debug\System.Data.SqlClient.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\bin\Debug\System.Memory.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\bin\Debug\System.Numerics.Vectors.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\obj\Debug\Fridge Test.csprojAssemblyReference.cache
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\obj\Debug\Fridge Test.csproj.CoreCompileInputs.cache
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\obj\Debug\Fridge Test.csproj.CopyComplete
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\obj\Debug\Fridge Test.dll
+D:\Windows.old.000\Users\Pierre\Desktop\THE FOLDER OF EVERYTHING\School\Poly\projet\fridge-2.0\Fridge Tester\.mono\temp\obj\Debug\Fridge Test.pdb

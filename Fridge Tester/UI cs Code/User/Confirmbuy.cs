@@ -27,6 +27,10 @@ public class Confirmbuy : ConfirmationDialog
         var control = (UtilisateurMenu)this.Owner;
 	    Facture facture = new Facture(utilisateur,control.item);
         currentuser.database.creerFacture(facture);
+        control.item.removeStock(1);
+        utilisateur.setDette(utilisateur.getDette()+control.item.getPrix());
+        currentuser.database.OverrideItem(control.item);
+        currentuser.database.OverrideUtilisateur(utilisateur);
         control.refreshHistorique();
         control.refreshUser();
 

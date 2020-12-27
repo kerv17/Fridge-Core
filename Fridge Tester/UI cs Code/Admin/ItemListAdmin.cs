@@ -39,7 +39,7 @@ public class ItemListAdmin : Godot.ItemList
 		a.database.refresh();
 		items = a.database.listeI;
 		Clear();
-		GD.Print(items.Count);
+	
 		foreach (Item item in items)
 		{
 			if (item != null)

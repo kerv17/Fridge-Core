@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iUG+XWj0tSe/9fjCXII6Jjl7K0O0cPA3itOIOcZZR/g/T9HJ8lTk+V4CFFZtU0YZ0sTvYZRLr32exbZIcchjXQ==",
+  "dgSpecHash": "nUAK4vKZ2pcieRBwnc8LbjCzJMv58w+xApPiFdoNk7UppSLRRkIoGfwpKzT42VE8vGvRil82MIGUOVdRZgb3gA==",
   "success": true,
-  "projectFilePath": "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\TECH\\GODOT 3.0\\Fridge Tester\\Fridge Test.csproj",
+  "projectFilePath": "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\School\\Poly\\projet\\fridge-2.0\\Fridge Tester\\Fridge Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kerv1\\.nuget\\packages\\mysql.data\\6.10.9\\mysql.data.6.10.9.nupkg.sha512",
     "C:\\Users\\kerv1\\.nuget\\packages\\mysqlconnector\\1.0.1\\mysqlconnector.1.0.1.nupkg.sha512",

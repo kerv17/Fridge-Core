@@ -65,7 +65,6 @@ namespace Fridge_2_0
         public void ajouterFacture(Facture f)
         {
             historique_.Add(f);
-            dette_ += f.getPrix();
         }
         /*
         public void afficher()

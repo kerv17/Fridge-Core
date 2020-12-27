@@ -10,8 +10,8 @@ public class AdminPanel : Control
     // private string b = "text";
 
     enum Mode {
-		Utilisateur = 0,
-		Item = 1,
+		Utilisateur = 1,
+		Item = 0,
 		Facture = 2
 	}
 	Mode mode = Mode.Utilisateur;
@@ -98,10 +98,12 @@ public class AdminPanel : Control
         {
             case Mode.Utilisateur:
                 WindowDialog newUser = (WindowDialog)GetNode("NouvelUtilisateur");
+
                 newUser.PopupCenteredRatio();
                 break;
             case Mode.Item:
                 WindowDialog newItem = (WindowDialog)GetNode("NouvelItem");
+
                 newItem.PopupCenteredRatio();
                 break;
         }
@@ -109,30 +111,49 @@ public class AdminPanel : Control
 
     private void onModifier()
     {
-
-        Godot.ItemList list = (Godot.ItemList)GetNode("Panel/ItemList");
+        Godot.TabContainer tabContainer = (Godot.TabContainer)GetNode("Panel/TabContainer");
+        
+        Godot.ItemList list = (Godot.ItemList)tabContainer.GetChild(tabContainer.CurrentTab);
         int selected = 0;
         try
         {
-            selected = list.GetSelectedItems()[0];
+            selected = list.GetSelectedItems()[0]+1;
+            foreach (Utilisateur u in utilisateurs){
+                if (u!=null)
+                    GD.Print(u.getNom());
+            }
+            foreach(Item i in items){
+                if (i!=null)
+                    GD.Print(i.getNom());
+            }
         }
         catch(Exception e)
         {
          
         }
-
+        
+        this.mode = (Mode)tabContainer.CurrentTab;
         switch (mode)
         {
             case Mode.Utilisateur:
-                ModifierUtilisateur newUser = (ModifierUtilisateur)GetNode("ModifierUtilisasteur");
-                newUser.user = utilisateurs[selected];
-                newUser.PopupCenteredRatio();
+                ModifierUtilisateur newUser = (ModifierUtilisateur)GetNode("ModifierUtilisateur");
+                GD.Print(newUser);
+                if (utilisateurs[selected] != null){
+                    newUser.user = utilisateurs[selected];
+                    newUser.admin = this;
+                    newUser.PopupCenteredRatio();
+                }
                 break;
 
             case Mode.Item:
                 ModifierItem newItem = (ModifierItem)GetNode("ModifierItem");
-                newItem.item = items[selected];
-                newItem.PopupCenteredRatio();
+                if (items[selected]!=null){
+                    newItem.item = items[selected];
+                    newItem.admin = this;
+                    newItem.PopupCenteredRatio();
+                    
+
+                }
                 break;
         }
 	}

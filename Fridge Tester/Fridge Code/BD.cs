@@ -129,13 +129,30 @@ namespace Fridge_2_0
 		//Remplace les infos d'un Utilisateur dans la DB par celles du objet
 		public void OverrideUtilisateur(Utilisateur utilisateur)
 		{
-			string commandtext =
-				"UPDATE Utilisateur SET" +
-				" email = '" + utilisateur.getEmail() + "', " +
-				"mdp = '" + utilisateur.getMotDePasse() + "', " +
-				"dette = " + utilisateur.getDette() +
-				"WHERE id = " + utilisateur.getId() + ";";
-			Helper.executeCommand(commandtext, cnn_);
+			string commandNom =" nom = '" + utilisateur.getNom() + "' ";
+			string commandSurnom = " surnom = '" + utilisateur.getSurnom()+"' ";
+			string commandEmail = " email = '" + utilisateur.getEmail() + "' ";
+			string commandMPD = " mdp = '" + utilisateur.getMotDePasse() + "' ";
+			string commandDette = " dette = " + utilisateur.getDette()+ " ";
+
+			List<string> list = new List<string>();
+			list.Add(commandEmail);
+			list.Add(commandDette);
+			list.Add(commandMPD);
+			list.Add(commandNom);
+			list.Add(commandSurnom);
+
+			foreach(string s in list){
+				string commandtext =
+					"UPDATE utilisateur SET" +
+					s +
+					"WHERE id = " + utilisateur.getId() + ";";
+
+				
+				Helper.executeCommand(commandtext, cnn_);
+			}
+
+
 		}
 
 		public void creerUtilisateur(Utilisateur utilisateur)
@@ -196,13 +213,23 @@ namespace Fridge_2_0
 
 		public void OverrideItem(Item item)
 		{
-			string commandtext =
-				"UPDATE Utilisateur SET" +
-				" nom = '" + item.getNom() + "', " +
-				"cout = " + item.getPrix() + ", " +
-				"stock = " + item.getStock() +
-				"WHERE id = " + item.getId() + ";";
-			Helper.executeCommand(commandtext, cnn_);
+			string commandNom =" nom = '" + item.getNom() + "' ";
+			string commandCout = " cout = " + item.getPrix()+" ";
+			string commandStock =" stock = " + item.getStock()+ " ";
+
+			List<string> list = new List<string>();
+			list.Add(commandNom);
+			list.Add(commandCout);
+			list.Add(commandStock);
+			foreach(string s in list){
+				string commandtext =
+					"UPDATE produit SET" +
+					s +
+					"WHERE id = " + item.getId() + ";";
+
+				
+				Helper.executeCommand(commandtext, cnn_);
+			}
 		}
 
 		public void creerItem(Item item)
@@ -452,6 +479,6 @@ namespace Fridge_2_0
 	}
 
 
-
+	
 
 }

@@ -7,10 +7,6 @@
 [ext_resource path="res://UI cs Code/User/HistoriqueList.cs" type="Script" id=5]
 [ext_resource path="res://Font/MonoFont.tres" type="DynamicFont" id=6]
 
-
-
-
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Panel
 

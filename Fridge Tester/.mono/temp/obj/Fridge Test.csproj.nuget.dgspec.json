@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\TECH\\GODOT 3.0\\Fridge Tester\\Fridge Test.csproj": {}
+    "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\School\\Poly\\projet\\fridge-2.0\\Fridge Tester\\Fridge Test.csproj": {}
   },
   "projects": {
-    "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\TECH\\GODOT 3.0\\Fridge Tester\\Fridge Test.csproj": {
+    "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\School\\Poly\\projet\\fridge-2.0\\Fridge Tester\\Fridge Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\TECH\\GODOT 3.0\\Fridge Tester\\Fridge Test.csproj",
+        "projectUniqueName": "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\School\\Poly\\projet\\fridge-2.0\\Fridge Tester\\Fridge Test.csproj",
         "projectName": "Fridge Test",
-        "projectPath": "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\TECH\\GODOT 3.0\\Fridge Tester\\Fridge Test.csproj",
+        "projectPath": "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\School\\Poly\\projet\\fridge-2.0\\Fridge Tester\\Fridge Test.csproj",
         "packagesPath": "C:\\Users\\kerv1\\.nuget\\packages\\",
-        "outputPath": "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\TECH\\GODOT 3.0\\Fridge Tester\\.mono\\temp\\obj\\",
+        "outputPath": "D:\\Windows.old.000\\Users\\Pierre\\Desktop\\THE FOLDER OF EVERYTHING\\School\\Poly\\projet\\fridge-2.0\\Fridge Tester\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -9,6 +9,7 @@ public class ModifierItem : WindowDialog
     // private string b = "text";
     CurrentUser current;
     public Item item;
+    public AdminPanel admin;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -22,7 +23,7 @@ public class ModifierItem : WindowDialog
         string[] str = new string[5];
         str[0] = "Nom: " + item.getNom();
         str[1] = "Prix: " + item.getPrix();
-        str[2] = "Email: " + item.getStock();
+        str[2] = "Stock: " + item.getStock();
         foreach (string s in str)
         {
             textBox.AddText(s);
@@ -38,14 +39,18 @@ public class ModifierItem : WindowDialog
 
     private void onConfirm()
     {
-        var nom = (LineEdit)GetNode("Control/nom");
-        var cout = (LineEdit)GetNode("Control/prix");
-        var stock = (LineEdit)GetNode("Control/stock");
+        var nom = (LineEdit)GetNode("Control/Nom");
+        var cout = (LineEdit)GetNode("Control/Prix");
+        var stock = (LineEdit)GetNode("Control/Stock");
 
-        item.setNom(nom.Text);
-        item.setPrix(Convert.ToDouble(cout.Text));
-        item.addStock(Convert.ToInt32(stock.Text));
+        if(nom.Text != "")
+            item.setNom(nom.Text);
+        if(cout.Text != "")
+            item.setPrix(Convert.ToDouble(cout.Text));
+        if(stock.Text != "")
+            item.addStock(Convert.ToInt32(stock.Text));
         current.database.OverrideItem(item);
+        admin.reloadLists();
         onPopup();
     }
 

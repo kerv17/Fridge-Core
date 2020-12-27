@@ -39,13 +39,18 @@ public class ItemList : Godot.ItemList
 		a.database.refresh();
 		items = a.database.listeI;
 		Clear();
-		GD.Print(items.Count);
+		int i = -1;
 		foreach (Item item in items) {
 			if (item != null)
 			{
 				string str = String.Format("{0,3}: {1,-20} {2, 10}$ - {3,5} en stock", item.getId(), item.getNom(), item.getPrix().ToString("F"), item.getStock());
 				AddItem(str);
+				if (item.getStock() == 0){
+					SetItemCustomFgColor(i,Color.ColorN("darkred"));
+					SetItemDisabled(i,true);
+				}
 			}
+			i++;
 		}
 	}
 
