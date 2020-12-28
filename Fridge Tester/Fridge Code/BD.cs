@@ -19,28 +19,33 @@ namespace Fridge_2_0
 	using System.Data.SqlClient;
 	using Godot;
 	using MySql.Data.MySqlClient;
+	using System.IO;
 
 	public class BD
 	{
+
+		string readJSONConnectionFile(string jsonFilePath){
+			string jsonString = System.IO.File.ReadAllText(jsonFilePath);
+			var res = JSON.Parse(jsonString).Result;
+			string a = res.ToString();
+			string connectionString2_ = a.Substring(1,a.Length-2);
+			connectionString2_ = connectionString2_.Replace(':','=');
+			connectionString2_ = connectionString2_.Replace(',',';');
+			connectionString2_ = connectionString2_.Trim(' ');
+			connectionString2_+=";Encrypt=false;";
+			return connectionString2_;
+		}
 		public BD()
 		{
-			Dictionary<string, string> dict = new Dictionary<string, string>();
-			dict.Add("host", "192.168.1.120");
-			dict.Add("port", "3306");
-			dict.Add("Database", "test");
-			dict.Add("Encrypt", "false");
-			//dict.Add("Persist Security Info", "False");
-			dict.Add("UID", "Fridge");
-			dict.Add("PWD", "comic123");
-			
 			connectionString_ = "";
-			foreach (KeyValuePair<string,string> line in dict)
-			{
-				connectionString_ += line.Key + "=" + line.Value + ";";
-			}
+			
+				
+			string jsonFilePath = "Fridge Code/connection-info.json";
+			connectionString_ = readJSONConnectionFile(jsonFilePath);
+			
 			GD.Print(connectionString_);
-			
-			
+
+					
 			cnn_ = new MySqlConnection(connectionString_);
 			cnnUser_ = new MySqlConnection(connectionString_);
 			cnnItems_ = new MySqlConnection(connectionString_);
