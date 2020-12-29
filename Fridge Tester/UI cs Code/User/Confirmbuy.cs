@@ -28,6 +28,10 @@ public class Confirmbuy : ConfirmationDialog
 	    Facture facture = new Facture(utilisateur,control.item);
         currentuser.database.creerFacture(facture);
         control.item.removeStock(1);
+        if(control.item.getStock() <= 0){
+            control.item.setStock(0);
+            control.item.mettreAJourDernierMomentHorsStock();
+        }
         utilisateur.setDette(utilisateur.getDette()+control.item.getPrix());
         currentuser.database.OverrideItem(control.item);
         currentuser.database.OverrideUtilisateur(utilisateur);

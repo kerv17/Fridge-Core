@@ -34,6 +34,9 @@ public class ModifierItem : WindowDialog
     private void onResetStock()
     {
         item.setStock(0);
+        item.mettreAJourDernierMomentHorsStock();
+        current.database.OverrideItem(item);
+        admin.reloadLists();
         onPopup();
     }
 
@@ -47,8 +50,14 @@ public class ModifierItem : WindowDialog
             item.setNom(nom.Text);
         if(cout.Text != "")
             item.setPrix(Convert.ToDouble(cout.Text));
-        if(stock.Text != "")
+        if(stock.Text != "" && stock.Text != "0"){
+            if (item.getStock() == 0)
+                item.mettreAJourTempsHorsStock();
+
+
             item.addStock(Convert.ToInt32(stock.Text));
+            
+        }
         current.database.OverrideItem(item);
         admin.reloadLists();
         onPopup();

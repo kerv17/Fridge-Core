@@ -43,7 +43,7 @@ namespace Fridge_2_0
 			string jsonFilePath = "Fridge Code/connection-info.json";
 			connectionString_ = readJSONConnectionFile(jsonFilePath);
 			
-			GD.Print(connectionString_);
+			//GD.Print(connectionString_);
 
 					
 			cnn_ = new MySqlConnection(connectionString_);
@@ -54,6 +54,20 @@ namespace Fridge_2_0
 			//Le string va dépendre des informations sur le Database. Il y avait mon IP, donc je l'ai enlevé
 
 
+		}
+
+		public BD(string connectionString){
+			connectionString_ = connectionString;
+			cnn_ = new MySqlConnection(connectionString_);
+			cnnUser_ = new MySqlConnection(connectionString_);
+			cnnItems_ = new MySqlConnection(connectionString_);
+			cnnFacture_ = new MySqlConnection(connectionString_);
+			refresh();
+		}
+
+
+		public string GetConnectionString(){
+			return connectionString_;
 		}
 
 		public void refresh()
@@ -221,11 +235,15 @@ namespace Fridge_2_0
 			string commandNom =" nom = '" + item.getNom() + "' ";
 			string commandCout = " cout = " + item.getPrix()+" ";
 			string commandStock =" stock = " + item.getStock()+ " ";
+			string commandLastOOStock = " dernierHorsStock = " + Helper.formatHorodate(item.getDernierHorsStock())+ " ";
+			string commandTotalOOStock = " TotalHorsStock = " + item.getTempsHorsStock()+ " ";
 
 			List<string> list = new List<string>();
 			list.Add(commandNom);
 			list.Add(commandCout);
 			list.Add(commandStock);
+			list.Add(commandLastOOStock);
+			list.Add(commandTotalOOStock);
 			foreach(string s in list){
 				string commandtext =
 					"UPDATE produit SET" +
@@ -341,12 +359,17 @@ namespace Fridge_2_0
 			int id, stock;
 			string nom;
 			double prix;
+			DateTime dernierHorsStock;
+			double totalHorsStock;
+
 
 			id = (int)reader.GetValue(0);
 			nom = (string)reader.GetValue(1);
 			prix = Convert.ToDouble(reader.GetValue(2));
 			stock = (int)reader.GetValue(3);
-			Item item = new Item(id, nom, prix, stock);
+			dernierHorsStock = (DateTime)reader.GetValue(4);
+			totalHorsStock = Convert.ToDouble(reader.GetValue(5));
+			Item item = new Item(id, nom, prix, stock, dernierHorsStock,totalHorsStock);
 			database.GetConnection().Close();
 			
 			return item;
@@ -460,8 +483,9 @@ namespace Fridge_2_0
 				"id INT AUTO_INCREMENT PRIMARY KEY," +
 				"nom VARCHAR(20) NOT NULL," +
 				"cout DECIMAL(4,2) DEFAULT 00.00," +
-				"stock INT DEFAULT 0" +
-				"" +
+				"stock INT DEFAULT 0," +
+				"dernierHorsStock TIMESTAMP NOT NULL," +
+				"TotalHorsStock DECIMAL(11,4) DEFAULT 000000.00" +
 				");";
 			executeCommand(command, c);
 		}

@@ -94,6 +94,16 @@ public class AdminPanel : Control
 
     private void onNouveau()
     {
+        Godot.TabContainer tabContainer = (Godot.TabContainer)GetNode("Panel/TabContainer");
+        if (tabContainer.CurrentTab == 0){
+            mode = Mode.Item;
+        }
+        else if (tabContainer.CurrentTab == 1){
+            mode = Mode.Utilisateur;
+        }
+        else
+            mode = Mode.Facture;
+
         switch (mode)
         {
             case Mode.Utilisateur:
@@ -105,6 +115,8 @@ public class AdminPanel : Control
                 WindowDialog newItem = (WindowDialog)GetNode("NouvelItem");
 
                 newItem.PopupCenteredRatio();
+                break;
+            default:
                 break;
         }
     }
