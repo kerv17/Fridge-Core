@@ -14,9 +14,9 @@ Ce programme a pour but de de gérer les achats et les dettes pour le Frigo du C
     * Voir son historique d'achat
 
 2. Admin
-    * Créer, modifier et supprimer les informations des produits dans le Fridge
+    * Créer, modifier les informations des produits dans le Fridge
         * Changer le nom, le prix et la quantité en stock d'un produit
-    * Créer, modifier et supprimer des comptes utilisateurs
+    * Créer, modifier des comptes utilisateurs
         * Changer le nom, surnom, mot de passe et addresse email associés à un compte
         * Modiffier la dette associée à un compte
 
@@ -36,15 +36,6 @@ Ce programme a pour but de de gérer les achats et les dettes pour le Frigo du C
             * lorsqu'un utilisateur atteint une certaine valeur - [ ]
             * Après un certain intervalle - [ ]
 1. Stats
-    * Produit le plus vendu durant une certaine période de temps - [x]
-    * Produit en rupture de stock le plus longtemps -[x]
-    * Utilisateur ayant le plus acheté- [x]
-    * Utilisateur le plus endetté -[x]
+    * Ajouter des statistiques supplémentaires
 
 ## Known bugs
-* Créer un nouvel item dans le menu Administrateur cause une erreur qui cesse l'application
-    * Il est possible que ce comportement se reproduise lorsqu'on crée un nouvel Utilisateur
-* Lorsqu'on modifie un item, le Menu Admin ne rafraichit pas automatiquement la page contenant les informations des produits
-    * Il est possible que ce comportement se reproduise lorsqu'on modifie un Utilisateur
-* Le bouton supprimer ne fait rien dans le Menu Admin.
-    * Il est possible de l'enlever, puisqu'il n'a pas d'utilité

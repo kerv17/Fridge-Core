@@ -60,6 +60,7 @@ public class ModifierItem : WindowDialog
         }
         current.database.OverrideItem(item);
         admin.reloadLists();
+        admin.refreshAll();
         onPopup();
     }
 

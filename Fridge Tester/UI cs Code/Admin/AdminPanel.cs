@@ -26,6 +26,7 @@ public class AdminPanel : Control
         current = (CurrentUser)GetNode("/root/CurrentUser");
         itemList = (Godot.ItemList)GetNode("Panel/TabContainer/Item");
         onUtilisateurs();
+        onItems();
     }
 
     public void reloadLists()
@@ -61,9 +62,11 @@ public class AdminPanel : Control
         itemList.Clear();
         foreach (Item item in items)
         {
-            string str = "";
-            str = String.Format("{0,3}: {1,-20} {2, 10}$ - {3,5} en stock", item.getId(), item.getNom(), item.getPrix(), item.getStock());
-            itemList.AddItem(str);
+            if(item != null){
+                string str = "";
+                str = String.Format("{0,3}: {1,-20} {2, 10}$ - {3,5} en stock", item.getId(), item.getNom(), item.getPrix(), item.getStock());
+                itemList.AddItem(str);
+            }
         }
         var control = (Control)GetNode("Panel/Control");
         control.Show();
@@ -225,6 +228,11 @@ public class AdminPanel : Control
             var control = (Control)GetNode("Panel/Control");
             control.Show();
         }
+    }
+
+    public void refreshAll(){
+        onItems();
+        onUtilisateurs();
     }
 }
 

@@ -94,6 +94,10 @@ namespace Fridge_2_0
         public void mettreAJourDernierMomentHorsStock(){
             DernierFinDeStock = DateTime.Now;
         }
+
+        public List<Facture> getHistorique(){
+            return historique_;
+        }
     }
 
 }

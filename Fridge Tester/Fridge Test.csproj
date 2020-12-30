@@ -31,33 +31,26 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI cs Code\StatsPanel.cs" />
     <Compile Include="Scenes\Test.cs" />
     <Compile Include="Fridge Code\BD.cs" />
     <Compile Include="Fridge Code\Facture.cs" />
     <Compile Include="Fridge Code\Item.cs" />
+    <Compile Include="Fridge Code\Stats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Fridge Code\Utilisateur.cs" />
-
     <Compile Include="UI cs Code\CurrentUser.cs" />
     <Compile Include="UI cs Code\Connections.cs" />
     <Compile Include="UI cs Code\Menu\ConnectionBox.cs" />
-
     <Compile Include="UI cs Code\User\UtilisateurMenu.cs" />
     <Compile Include="UI cs Code\User\Confirmbuy.cs" />
     <Compile Include="UI cs Code\User\ItemList.cs" />
     <Compile Include="UI cs Code\User\HistoriqueList.cs" />
-
-
     <Compile Include="UI cs Code\Admin\AdminPanel.cs" />
     <Compile Include="UI cs Code\Admin\FactureListAdmin.cs" />
     <Compile Include="UI cs Code\Admin\ItemListAdmin.cs" />
     <Compile Include="UI cs Code\Admin\ModifierItem.cs" />
     <Compile Include="UI cs Code\Admin\ModifierUtilisateur.cs" />
-
-
-
-
-
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

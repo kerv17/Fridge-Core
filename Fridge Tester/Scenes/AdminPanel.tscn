@@ -118,10 +118,14 @@ anchor_bottom = 1.0
 text = "Modifier"
 
 [node name="Button3" type="Button" parent="Panel/Control"]
+visible = false
 anchor_left = 0.8
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "Supprimer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 anchor_right = 1.0

@@ -258,10 +258,11 @@ namespace Fridge_2_0
 		public void creerItem(Item item)
 		{
 			string commandtext =
-				"INSERT INTO Produit(nom,cout,stock) VALUES(" +
+				"INSERT INTO Produit(nom,cout,stock,dernierHorsStock) VALUES(" +
 				"'" + item.getNom() + "', " +
 				"'" + item.getPrix() + "', " +
-				"'" + item.getStock() + "'" +
+				"'" + item.getStock() + "'," +
+				Helper.formatHorodate( item.getDernierHorsStock() ) +
 				");";
 			Helper.executeCommand(commandtext, cnn_);
 		}
