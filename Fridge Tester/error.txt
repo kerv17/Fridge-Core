@@ -1,5 +1,0 @@
-Access denied for user 'Kervin'@'DESKTOP-8IVO619' (using password: YES)
-MySql.Data
-  at MySql.Data.MySqlClient.MySqlStream.ReadPacket () [0x00096] in <91848474cae64953924e580b6a29a73d>:0 
-  at MySql.Data.MySqlClient.NativeDriver.ReadPacket () [0x00000] in <91848474cae64953924e580b6a29a73d>:0 
-  at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket () [0x00000] in <91848474cae64953924e580b6a29a73d>:0 
