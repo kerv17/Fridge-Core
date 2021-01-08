@@ -1,0 +1,459 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Font/DOTMATRI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://UI cs Code/Admin/AdminPanel.cs" type="Script" id=2]
+[ext_resource path="res://UI cs Code/Admin/ModifierUtilisateur.cs" type="Script" id=3]
+[ext_resource path="res://UI cs Code/Admin/ModifierItem.cs" type="Script" id=4]
+[ext_resource path="res://Font/MonoFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://UI cs Code/Admin/ItemListAdmin.cs" type="Script" id=6]
+[ext_resource path="res://UI cs Code/Admin/FactureListAdmin.cs" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Button_pressed():
+	get_tree().change_scene(\"res://Scenes/Menu.tscn\")
+	pass # Replace with function body.
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="ItemList" parent="Panel/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 5 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Utilisateurs" type="ItemList" parent="Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 5 )
+
+[node name="Factures" type="ItemList" parent="Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 5 )
+script = ExtResource( 7 )
+
+[node name="Control" type="Control" parent="Panel"]
+margin_left = 100.0
+margin_top = 525.377
+margin_right = 922.2
+margin_bottom = 565.377
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/Control"]
+anchor_right = 0.2
+anchor_bottom = 1.0
+text = "Nouveau"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Panel/Control"]
+anchor_left = 0.4
+anchor_right = 0.6
+anchor_bottom = 1.0
+text = "Modifier"
+
+[node name="Button3" type="Button" parent="Panel/Control"]
+visible = false
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Supprimer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 0.2
+margin_top = 27.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Panneau d'admin"
+text = "Panneau d'admin"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel"]
+anchor_left = 0.85
+anchor_top = 0.07
+anchor_right = 0.95
+anchor_bottom = 0.15
+text = "Retour"
+script = SubResource( 2 )
+
+[node name="NouvelUtilisateur" type="WindowDialog" parent="."]
+margin_left = 164.52
+margin_top = 122.177
+margin_right = 851.52
+margin_bottom = 513.177
+window_title = "Nouvel Utilisateur"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="NouvelUtilisateur"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.6
+margin_left = 0.299995
+margin_top = -0.100002
+margin_right = 0.700012
+margin_bottom = 70.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="surnom" type="LineEdit" parent="NouvelUtilisateur/Control"]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.1
+placeholder_text = "Surnom"
+
+[node name="nom" type="LineEdit" parent="NouvelUtilisateur/Control"]
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.3
+placeholder_text = "Nom"
+
+[node name="email" type="LineEdit" parent="NouvelUtilisateur/Control"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+placeholder_text = "Email"
+
+[node name="mdp" type="LineEdit" parent="NouvelUtilisateur/Control"]
+anchor_top = 0.7
+anchor_right = 1.0
+anchor_bottom = 0.7
+margin_bottom = 24.0
+secret = true
+placeholder_text = "Mot de passe"
+
+[node name="Button" type="Button" parent="NouvelUtilisateur"]
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+text = "Confirmer"
+
+[node name="ModifierUtilisateur" type="WindowDialog" parent="."]
+margin_left = 164.52
+margin_top = 122.177
+margin_right = 851.52
+margin_bottom = 513.177
+window_title = "Nouvel Utilisateur"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="ModifierUtilisateur"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.45
+margin_left = 0.299995
+margin_top = -0.100002
+margin_right = 0.700012
+margin_bottom = 70.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="surnom" type="LineEdit" parent="ModifierUtilisateur/Control"]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.1
+placeholder_text = "Surnom"
+
+[node name="nom" type="LineEdit" parent="ModifierUtilisateur/Control"]
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.3
+placeholder_text = "Nom"
+
+[node name="email" type="LineEdit" parent="ModifierUtilisateur/Control"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+placeholder_text = "Email"
+
+[node name="mdp" type="LineEdit" parent="ModifierUtilisateur/Control"]
+anchor_top = 0.7
+anchor_right = 1.0
+anchor_bottom = 0.7
+margin_bottom = 24.0
+secret = true
+placeholder_text = "Mot de passe"
+
+[node name="dette" type="LineEdit" parent="ModifierUtilisateur/Control"]
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 0.9
+margin_bottom = 24.0
+placeholder_text = "Dette"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ModifierUtilisateur"]
+anchor_left = 0.1
+anchor_top = 0.7
+anchor_right = 0.4
+anchor_bottom = 0.9
+margin_left = -7.62939e-06
+margin_right = -3.05176e-05
+color = Color( 0, 0, 0, 0.282353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ModifierUtilisateur/ColorRect"]
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.9
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ModifierUtilisateur"]
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+text = "Confirmer"
+
+[node name="NouvelItem" type="WindowDialog" parent="."]
+margin_left = 164.52
+margin_top = 122.177
+margin_right = 851.52
+margin_bottom = 513.177
+window_title = "Nouvel Item"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="NouvelItem"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.6
+margin_left = 0.299995
+margin_top = -0.100002
+margin_right = 0.700012
+margin_bottom = 70.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nom" type="LineEdit" parent="NouvelItem/Control"]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.1
+placeholder_text = "Nom"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prix" type="LineEdit" parent="NouvelItem/Control"]
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.3
+placeholder_text = "Prix"
+
+[node name="Button" type="Button" parent="NouvelItem"]
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+text = "Confirmer"
+
+[node name="ModifierItem" type="WindowDialog" parent="."]
+margin_left = 164.52
+margin_top = 122.177
+margin_right = 851.52
+margin_bottom = 513.177
+window_title = "Modifier Item"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="ModifierItem"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.6
+margin_left = 0.299995
+margin_top = -0.100002
+margin_right = 0.700012
+margin_bottom = 70.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nom" type="LineEdit" parent="ModifierItem/Control"]
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.1
+placeholder_text = "Nom"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prix" type="LineEdit" parent="ModifierItem/Control"]
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.3
+placeholder_text = "Prix"
+
+[node name="Stock" type="LineEdit" parent="ModifierItem/Control"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+placeholder_text = "Ajouter au stock"
+
+[node name="ResetStock" type="Button" parent="ModifierItem/Control"]
+anchor_left = 0.5
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.6
+margin_left = -50.5
+margin_top = 11.0
+margin_right = 51.5
+margin_bottom = 61.0
+text = "Reset le Stock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ModifierItem"]
+anchor_left = 0.1
+anchor_top = 0.6
+anchor_right = 0.4
+anchor_bottom = 0.85
+color = Color( 0, 0, 0, 0.282353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ModifierItem/ColorRect"]
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.9
+text = "Nom:
+Prix:
+Stock:"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ModifierItem"]
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+text = "Confirmer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="tab_changed" from="Panel/TabContainer" to="." method="_on_TabContainer_tab_changed"]
+[connection signal="pressed" from="Panel/Control/Button" to="." method="onNouveau"]
+[connection signal="pressed" from="Panel/Control/Button2" to="." method="onModifier"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="NouvelUtilisateur/Button" to="." method="onNewUserButton"]
+[connection signal="about_to_show" from="ModifierUtilisateur" to="ModifierUtilisateur" method="onPopup"]
+[connection signal="popup_hide" from="ModifierUtilisateur" to="." method="onModifierUtilisateurHide"]
+[connection signal="pressed" from="ModifierUtilisateur/Button" to="ModifierUtilisateur" method="_on_Button_pressed"]
+[connection signal="pressed" from="NouvelItem/Button" to="." method="onNewItemButton"]
+[connection signal="about_to_show" from="ModifierItem" to="ModifierItem" method="onPopup"]
+[connection signal="pressed" from="ModifierItem/Control/ResetStock" to="ModifierItem" method="onResetStock"]
+[connection signal="pressed" from="ModifierItem/Button" to="ModifierItem" method="onConfirm"]

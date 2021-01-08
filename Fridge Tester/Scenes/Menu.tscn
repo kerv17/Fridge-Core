@@ -1,0 +1,229 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Font/DOTMATRI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://UI cs Code/Menu/ConnectionBox.cs" type="Script" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Panel
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	
+	pass
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+
+
+func _on_Button_pressed():
+	$\"ConnectionBox\".visible = true
+	pass # replace with function body
+
+
+func _on_Button2_pressed():
+	$ConnectionBox2.visible =true
+	pass # Replace with function body.
+
+
+func _on_Button3_pressed():
+	get_tree().change_scene(\"res://Scenes/StatsPanel.tscn\")
+	pass # Replace with function body.
+"
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends WindowDialog
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+var password = \"\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Button_pressed():
+	if ($LineEdit.text == password):
+		var _value = get_tree().change_scene(\"res://Scenes/AdminPanel.tscn\")
+	pass # Replace with function body.
+"
+
+[node name="Panel" type="Panel"]
+light_mask = 0
+margin_right = 1024.0
+margin_bottom = 600.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.3
+margin_top = -100.0
+margin_bottom = 100.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Fridge"
+text = "Fridge"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.3
+anchor_top = 0.6
+anchor_right = 0.3
+anchor_bottom = 0.6
+margin_left = -100.0
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+text = "Connection"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+anchor_left = 0.7
+anchor_top = 0.6
+anchor_right = 0.7
+anchor_bottom = 0.6
+margin_left = -100.0
+margin_top = -26.0
+margin_right = 100.0
+margin_bottom = 24.0
+text = "Admin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+margin_left = -50.0
+margin_top = -26.0
+margin_right = 50.0
+margin_bottom = 24.0
+text = "Stats"
+
+[node name="ConnectionBox" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -150.0
+margin_right = 250.0
+margin_bottom = 150.0
+window_title = "Connection"
+resizable = true
+script = ExtResource( 2 )
+
+[node name="LineEdit" type="LineEdit" parent="ConnectionBox"]
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.4
+margin_left = -200.0
+margin_right = 200.0
+placeholder_text = "Utilisateur"
+
+[node name="LineEdit2" type="LineEdit" parent="ConnectionBox"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.6
+margin_left = -200.0
+margin_right = 200.0
+secret = true
+placeholder_text = "Mot de passe"
+
+[node name="Button" type="Button" parent="ConnectionBox"]
+anchor_left = 0.5
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.8
+margin_left = -50.0
+margin_right = 50.0
+text = "OK"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConnectionBox"]
+visible = false
+anchor_top = 0.215
+anchor_right = 1.0
+anchor_bottom = 0.269
+custom_colors/default_color = Color( 1, 0.227451, 0.227451, 0.756863 )
+bbcode_enabled = true
+bbcode_text = "[center]Le nom d'utilisateur ou le mot de passe est érroné."
+text = "Le nom d'utilisateur ou le mot de passe est érroné."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConnectionBox2" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -248.0
+margin_top = -73.0
+margin_right = 252.0
+margin_bottom = 94.0
+window_title = "Admin"
+resizable = true
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="ConnectionBox2"]
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.4
+margin_left = -200.0
+margin_right = 200.0
+secret = true
+placeholder_text = "Mot de passe"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ConnectionBox2"]
+anchor_left = 0.5
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.8
+margin_left = -50.0
+margin_top = -7.9
+margin_right = 50.0
+margin_bottom = 3.39999
+text = "OK"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="text_entered" from="ConnectionBox/LineEdit2" to="ConnectionBox" method="_on_Button_pressed"]
+[connection signal="pressed" from="ConnectionBox/Button" to="ConnectionBox" method="_on_Button_pressed"]
+[connection signal="text_entered" from="ConnectionBox2/LineEdit" to="ConnectionBox2" method="_on_Button_pressed"]
+[connection signal="pressed" from="ConnectionBox2/Button" to="ConnectionBox2" method="_on_Button_pressed"]

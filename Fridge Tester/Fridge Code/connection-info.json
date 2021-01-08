@@ -1,0 +1,7 @@
+{
+    "host":"IP",
+    "port":"3306",
+    "Database":"Nom De la DB",
+    "UID":"Username MySQL",
+    "PWD":"Password MySQL"
+}
