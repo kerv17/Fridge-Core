@@ -65,6 +65,7 @@ func _on_Button_pressed():
 "
 
 [node name="Panel" type="Panel"]
+visible = false
 light_mask = 0
 margin_right = 1024.0
 margin_bottom = 600.0

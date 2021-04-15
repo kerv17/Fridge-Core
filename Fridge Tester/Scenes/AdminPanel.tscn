@@ -301,6 +301,20 @@ margin_right = 50.0
 margin_bottom = 25.0
 text = "Confirmer"
 
+[node name="Rappel" type="Button" parent="ModifierUtilisateur"]
+anchor_left = 0.75
+anchor_top = 0.8
+anchor_right = 0.75
+anchor_bottom = 0.8
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+text = "Envoyer un rappel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="NouvelItem" type="WindowDialog" parent="."]
 margin_left = 164.52
 margin_top = 122.177
@@ -453,6 +467,7 @@ __meta__ = {
 [connection signal="about_to_show" from="ModifierUtilisateur" to="ModifierUtilisateur" method="onPopup"]
 [connection signal="popup_hide" from="ModifierUtilisateur" to="." method="onModifierUtilisateurHide"]
 [connection signal="pressed" from="ModifierUtilisateur/Button" to="ModifierUtilisateur" method="_on_Button_pressed"]
+[connection signal="pressed" from="ModifierUtilisateur/Rappel" to="ModifierUtilisateur" method="_on_Rappel_pressed"]
 [connection signal="pressed" from="NouvelItem/Button" to="." method="onNewItemButton"]
 [connection signal="about_to_show" from="ModifierItem" to="ModifierItem" method="onPopup"]
 [connection signal="pressed" from="ModifierItem/Control/ResetStock" to="ModifierItem" method="onResetStock"]

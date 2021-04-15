@@ -142,7 +142,7 @@ public class AdminPanel : Control
                     GD.Print(i.getNom());
             }
         }
-        catch(Exception e)
+        catch(Exception)
         {
          
         }

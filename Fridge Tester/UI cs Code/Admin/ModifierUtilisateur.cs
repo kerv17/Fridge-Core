@@ -61,6 +61,10 @@ public class ModifierUtilisateur : WindowDialog
     //  {
     //      
     //  }
+
+    private void _on_Rappel_pressed(){
+        current.mail.sendMailToUser(user);
+    }
 }
 
 

@@ -37,6 +37,7 @@
     <Compile Include="Fridge Code\Facture.cs" />
     <Compile Include="Fridge Code\Item.cs" />
     <Compile Include="Fridge Code\Stats.cs" />
+    <Compile Include="Fridge Code\Mail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Fridge Code\Utilisateur.cs" />
     <Compile Include="UI cs Code\CurrentUser.cs" />

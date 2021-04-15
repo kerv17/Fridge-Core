@@ -43,7 +43,7 @@ public class ConnectionBox : WindowDialog
 				 throw(e);
 				}
 			}
-		catch(Exception e)
+		catch(Exception)
 		{
 			var a = (RichTextLabel)GetNode("RichTextLabel");
 			a.Show();

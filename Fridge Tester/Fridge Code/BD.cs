@@ -118,6 +118,25 @@ namespace Fridge_2_0
 			return liste;
 		}
 
+		public List<Utilisateur> GetUtilisateurs(double dette)
+		{
+			cnnUser_.Open();
+			List<Utilisateur> liste = new List<Utilisateur>();
+			liste.Add(null);
+			string command = "Select * from Utilisateur WHERE dette > "+ dette+";";
+
+			MySqlDataReader dataReader = Helper.getReader(command, cnnUser_);
+
+
+			Utilisateur utilisateur;
+			while ((utilisateur = Helper.readUtilisateur(dataReader, this)) != null)
+			{
+				liste.Add(utilisateur);
+			}
+			cnnUser_.Close();
+			return liste;
+		}
+
 		//Crée un objet Utilisateur à partir d'un surnom correspondant dans la DB
 		public Utilisateur GetUtilisateur(string surnom)
         {
