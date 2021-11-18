@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Fridge Test": {
-      "commandName": "Project",
-      "sqlDebugging": false
-    }
-  }
-}
