@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="Fridge"
+run/main_scene="res://Scenes/Menu.tscn"
+boot_splash/image="res://logo_comic_blanc.png"
+config/icon="res://fridge.png"
+
+[autoload]
+
+CurrentUser="*res://Scenes/CurrentUser.tscn"
+
+[display]
+
+window/size/resizable=false
+window/size/fullscreen=true
+window/size/always_on_top=true
+window/stretch/mode="2d"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"
